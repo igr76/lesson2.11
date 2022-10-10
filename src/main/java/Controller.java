@@ -2,6 +2,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import pro.sky.skypospringdemo.Item;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/store/order")
@@ -14,11 +17,11 @@ public class Controller {
 
 
     @GetMapping("/add")
-    public void add(@RequestParam("Id") Integer id) {
-       service.basketAdd();
+    public void add(@RequestParam("Id") List<Integer> ids) {
+       service.basketAdd(ids);
     }
     @GetMapping("/get")
-    public String get() {
-
+    public List<Item> get() {
+        return service.basketGet();
     }
 }
