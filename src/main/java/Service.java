@@ -15,9 +15,7 @@ public class Service {
         this.basket = basket;
     }
 
-    public void init() {
 
-    }
     public void basketAdd(List<Integer> ids) {
          basket.add(
                 ids.stream()
